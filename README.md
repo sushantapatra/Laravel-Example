@@ -13,7 +13,7 @@
 `php artisan queue:table` 
 
 ## Create Job/queue Listen/send mail
-`php artisan queue:listen or php artisan queue:work` 
+`php artisan queue:listen or php artisan queue:work --timeout=0` 
 
 ## Redis Database using to send Email
 ### Redis Installations on Windows System and Laravel
@@ -41,3 +41,7 @@ Test Redis:
 ### Install Redis in Laravel
 `composer require predis/predis`
 
+
+# Large CSV data insert in database using Queue and Job
+`php artisan make:model Pincode -m`
+`php artisan queue:batches-table` 

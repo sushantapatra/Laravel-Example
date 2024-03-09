@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use\App\Http\Controllers\PincodeImportController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,3 +21,7 @@ Route::get('/send-mail', function () {
     dispatch(new \App\Jobs\SendMailJob());
     return view('welcome');
 });
+
+// Large Number of CSV data import using Jobs and Queue
+Route::get('/csv-import-view',[PincodeImportController::class,'index'])->name('pincode');
+Route::post('/csv-import',[PincodeImportController::class,'store'])->name('csvimport');
