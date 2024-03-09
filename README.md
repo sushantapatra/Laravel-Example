@@ -13,4 +13,31 @@
 `php artisan queue:table` 
 
 ## Create Job/queue Listen/send mail
-`php artisan queue:listen` 
+`php artisan queue:listen or php artisan queue:work` 
+
+## Redis Database using to send Email
+### Redis Installations on Windows System and Laravel
+Open Powershell as Administrator and run this command to enable Windows Subsystem  for Linux(WSL):
+`Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux`
+
+Lunch Microsoft Windows Store:
+`install ubuntu`
+`sudo apt-add-repository ppa:redislabs/redis`
+`sudo apt-get update`
+`sudo apt-get upgrade`
+`sudo apt-get install redis-server`
+`sudo systemctl enable redis-server.service`
+
+Test Redis:
+`redis-cli`
+`set user:1 "Test User1"`
+`get user:1`
+
+`sudo service redis-server stop`
+`sudo service redis-server start`
+`sudo service redis-server restart`
+`sudo service redis-server status`
+
+### Install Redis in Laravel
+`composer require predis/predis`
+
